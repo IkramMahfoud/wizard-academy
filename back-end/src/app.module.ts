@@ -11,6 +11,7 @@ import { DeanModule } from './dean/dean.module';
 import { StudentModule } from './student/student.module';
 import { SpecialtyModule } from './specialty/specialty.module';
 import { SubjectModule } from './subject/subject.module';
+import { EnseignantModule } from './enseignant/enseignant.module';
 
 
 @Module({
@@ -30,6 +31,7 @@ import { SubjectModule } from './subject/subject.module';
 		StudentModule,
 		SpecialtyModule,
 		SubjectModule,
+		EnseignantModule,
 	],
 	controllers: [],
 	providers: [],

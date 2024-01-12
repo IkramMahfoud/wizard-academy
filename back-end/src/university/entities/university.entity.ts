@@ -1,4 +1,5 @@
 
+import { Department } from '@/department/entity/department.entity';
 import { Student } from '@/student/entities/student.entity';
 import { User } from '@/user/entities/user.entity';
 import {
@@ -26,4 +27,7 @@ export class University {
 
 	@OneToMany(() => Student, (student) => student.university)
 	students: Student[];
+
+	@OneToMany(() => Department, department => department.university)
+  departments: Department[];
 }

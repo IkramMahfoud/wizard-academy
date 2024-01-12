@@ -1,7 +1,12 @@
-import { IsNotEmpty, IsString } from "class-validator";
+import { IsNotEmpty, IsNumber, IsString } from "class-validator";
 
 export class CreateDepartmentDto {
     @IsString()
     @IsNotEmpty()
-  readonly name: string;
+    readonly name: string;
+
+    @IsNotEmpty()
+    @IsNumber()
+    universityId : number
+
 }

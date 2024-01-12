@@ -8,27 +8,27 @@ export class DepartmentsController {
   constructor(private readonly departmentService: DepartmentService) { }
 
   @Get()
-  async getAllDepartments() {
-    return this.departmentService.getAllDepartments();
+  async findAll() {
+    return this.departmentService.findAll();
   }
 
   @Get(':id')
-  async getDepartmentById(@Param('id') id: number) {
-    return this.departmentService.getDepartmentById(id);
+  async findOne(@Param('id') id: number) {
+    return this.departmentService.findOne(id);
   }
 
   @Post()
-  async createDepartment(@Body() createDepartmentDto: CreateDepartmentDto) {
-    return this.departmentService.createDepartment(createDepartmentDto.name);
-  }
+async create(@Body() createDepartmentDto: CreateDepartmentDto) {
+  return this.departmentService.create(createDepartmentDto);
+}
 
-  @Put(':id')
-  async updateDepartment(@Param('id') id: number, @Body() updateDepartmentDto: UpdateDepartmentDto) {
-    return this.departmentService.updateDepartment(id, updateDepartmentDto.name);
-  }
+  // @Put(':id')
+  // async updateDepartment(@Param('id') id: number, @Body() updateDepartmentDto: UpdateDepartmentDto) {
+  //   return this.departmentService.updateDepartment(id, updateDepartmentDto.name);
+  // }
 
   @Delete(':id')
-  async deleteDepartment(@Param('id') id: number) {
-    return this.departmentService.deleteDepartment(id);
+  async delete(@Param('id') id: number) {
+    return this.departmentService.delete(id);
   }
 }
